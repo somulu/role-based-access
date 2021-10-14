@@ -1,0 +1,100 @@
+{
+  "users": [
+    {
+      "email": "admin@mail.com",
+      "password": "admin",
+      "type": "admin@123"
+    },
+    {
+      "email": "ram@mail.com",
+      "password": "ram@1234",
+      "type": "user"
+    },
+    {
+      "email": "shyam@mail.com",
+      "password": "shyam@123",
+      "type": "user"
+    }
+  ],
+  "ram_user": [
+    {
+      "title": "Play",
+      "desc": "I need to go to play football",
+      "id": "1"
+    },
+    {
+      "title": "Cook",
+      "desc": "Need to buy vegetables",
+      "id": "2"
+    },
+    {
+      "title": "Health",
+      "desc": "Need to get health checkup tomorrow",
+      "id": "3"
+    },
+    {
+      "id": "4",
+      "title": "new title",
+      "desc": "new description"
+    },
+    {
+      "id": "5",
+      "title": "Cook",
+      "desc": "Prepare nice menu for dinner"
+    },
+    {
+      "title": "test",
+      "desc": "test",
+      "id": "85ca0bc49d104c51863f705cd4943688"
+    },
+    {
+      "title": "test",
+      "desc": "test",
+      "id": "36c426e4de234d33931ea3253d5915f4"
+    },
+    {
+      "title": "new task",
+      "desc": "added new task",
+      "id": [
+        "9d10f91a",
+        "0dd1",
+        "4316",
+        "bb85",
+        "fbe99d34317c"
+      ]
+    }
+  ],
+  "shyam_user": [
+    {
+      "title": "Play",
+      "desc": "I need to go to play badminton",
+      "id": "1"
+    },
+    {
+      "title": "Health",
+      "desc": "Renew my gym membership",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "title": "Medical",
+      "desc": "Renew medical policy"
+    },
+    {
+      "id": "4",
+      "title": "Sports",
+      "desc": "Play football daily"
+    },
+    {
+      "title": "shayam",
+      "desc": "shayam added new task",
+      "id": [
+        "ad2799ce",
+        "cecd",
+        "4b92",
+        "85f7",
+        "76f39fba4258"
+      ]
+    }
+  ]
+}
