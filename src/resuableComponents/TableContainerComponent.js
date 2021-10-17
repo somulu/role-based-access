@@ -12,7 +12,7 @@ import {
 import AddTask from '../components/AddTask';
 
 const TableContainerComponent = ({ usersData, url }) => {
-  console.log('Table Component URL', url);
+  // console.log('Table Component URL', url);
   return (
     <>
       <AddTask url={url}></AddTask>
@@ -26,8 +26,8 @@ const TableContainerComponent = ({ usersData, url }) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {usersData.map((row, index) => (
-              <TableRow key={row.index}>
+            {usersData.map((row) => (
+              <TableRow key={row.id}>
                 <TableCell>{row.id}</TableCell>
                 <TableCell>{row.title}</TableCell>
                 <TableCell>{row.desc}</TableCell>

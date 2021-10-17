@@ -9,17 +9,20 @@ import {
   Box,
 } from '@mui/material';
 import { useForm } from 'react-hook-form';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const AddTask = ({ url }) => {
-  console.log('ADD TASK URL', url);
+  // console.log('ADD TASK URL', url);
   const [open, setOpen] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const userName = JSON.parse(localStorage.getItem('login'));
+  const history = useHistory();
 
   const handleOpen = () => {
     setOpen(true);
@@ -30,11 +33,9 @@ const AddTask = ({ url }) => {
   };
 
   const onSubmit = async (data) => {
-    // console.log('UUID', uuidv4().split('-').splice(0, 5).join(''));
     const postObj = {
       title: data.title,
       desc: data.desc,
-      id: uuidv4().split('-'),
     };
 
     const sendDataToAPI = await axios.post(url, postObj, {
@@ -42,18 +43,20 @@ const AddTask = ({ url }) => {
         'Content-Type': 'application/json',
       },
     });
-    console.log('sendDataToAPI', sendDataToAPI);
-    if (
-      sendDataToAPI.status === 201 &&
-      sendDataToAPI.statusText === 'Created'
-    ) {
+    if (sendDataToAPI.status === 200) {
       setOpen(false);
+      history.push(`/user/${userName.userType}`);
     }
   };
 
   return (
     <>
-      <Button variant='contained' color='secondary' onClick={handleOpen}>
+      <Button
+        variant='contained'
+        color='secondary'
+        onClick={handleOpen}
+        style={{ marginTop: '10px' }}
+      >
         Add Task
       </Button>
 
@@ -81,7 +84,7 @@ const AddTask = ({ url }) => {
                     {errors.title?.message}
                   </Typography>
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={12}>
                   <TextField
                     required
                     id='desc'

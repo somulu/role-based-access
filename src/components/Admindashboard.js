@@ -4,8 +4,8 @@ import TableContainerComponent from '../resuableComponents/TableContainerCompone
 
 const Admindashboard = () => {
   const usersData = useFetch({
-    url1: 'http://localhost:5000/ram_user',
-    url2: 'http://localhost:5000/shyam_user',
+    url1: 'http://localhost:5000/api/ram',
+    url2: 'http://localhost:5000/api/shyam',
   });
 
   return <TableContainerComponent usersData={usersData} />;
